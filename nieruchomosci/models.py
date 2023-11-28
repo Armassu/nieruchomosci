@@ -1,4 +1,5 @@
 from django.db import models
+
 class Nieruchomosc(models.Model):
     tytul = models.CharField(max_length=200)
     opis = models.TextField()
@@ -10,4 +11,3 @@ class Nieruchomosc(models.Model):
 
     def __str__(self):
         return self.tytul
-

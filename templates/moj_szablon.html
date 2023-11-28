@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mój Szablon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista Nieruchomości</h1>
+    <ul>
+        {% for nieruchomosc in zestaw_danych %}
+            <li>
+                <strong>{{ nieruchomosc.tytul }}</strong> - Cena: {{ nieruchomosc.cena }} zł<br>
+                Opis: {{ nieruchomosc.opis }}<br>
+                Lokalizacja: {{ nieruchomosc.lokalizacja }}<br>
+                <em>Dostępność: {% if nieruchomosc.dostepnosc %}Dostępna{% else %}Niedostępna{% endif %}</em>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
